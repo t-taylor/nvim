@@ -115,7 +115,7 @@ nmap <leader>sS ;call MakeSession()<cr>
 " termbin
 nnoremap gy :w !nc termbin.com 9999 \| xclip -selection clipboard<cr>
 
-nnoremap <silent> <C-L> :nohl<CR><C-L>
+nnoremap <silent> <C-L> :nohl<CR><C-L>:syntax sync minlines=10000<cr>
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 nnoremap <silent> <F6> :set spell!<cr>
@@ -188,6 +188,7 @@ Plug 'machakann/vim-sandwich'
 "" Fancy git stuff
 Plug 'tpope/vim-fugitive'
 "" fzf
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "" More verbs/ motions
 Plug 'wellle/targets.vim'
@@ -218,10 +219,12 @@ Plug 'tpope/vim-dispatch'
 "Plug 'tomtom/quickfixsigns_vim'
 " Math
 Plug 'arecarn/vim-crunch'
+" Comment
+Plug 'tpope/vim-commentary'
 " Complete
 "Plug 'davidhalter/jedi-vim'
-" indent
-Plug 'Vimjas/vim-python-pep8-indent'
+"" indent
+"Plug 'Vimjas/vim-python-pep8-indent'
 " terminal text pipe
 Plug 'kassio/neoterm'
 " GO

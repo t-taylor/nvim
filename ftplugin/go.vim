@@ -1,6 +1,3 @@
-nnoremap <buffer> <leader>T :GoTest<cr>
-nnoremap <buffer> <leader>t :GoTestFunc<cr>
-
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
@@ -24,7 +21,20 @@ function! ReuseVimGoTerm(cmd) abort
 endfunction
 
 let g:go_term_enabled = 1
-let g:go_term_mode = "silent keepalt rightbelow 15 split"
+let g:go_term_mode = "silent keepalt rightbelow 10 split"
 let g:go_def_reuse_buffer = 1
 
 nnoremap <buffer> <leader>r :call ReuseVimGoTerm('GoRun')<Return>
+nnoremap <buffer> <leader>T :call ReuseVimGoTerm('GoTest')<Return>
+nnoremap <buffer> <leader>t :call ReuseVimGoTerm('GoTestFunc')<Return>
+
+function! CloseVimGoTerm() abort
+    for w in nvim_list_wins()
+        if "goterm" == nvim_buf_get_option(nvim_win_get_buf(w), 'filetype')
+            call nvim_win_close(w, v:true)
+            break
+        endif
+    endfor
+endfunction
+
+nnoremap <buffer> <leader>c :call CloseVimGoTerm()<Return>
