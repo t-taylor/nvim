@@ -229,7 +229,13 @@ Plug 'tpope/vim-commentary'
 Plug 'kassio/neoterm'
 " GO
 Plug 'fatih/vim-go'
+" editorconfig
+Plug 'editorconfig/editorconfig-vim'
+" copilot
+"Plug 'github/copilot.vim'
 call plug#end()
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 
 " gruvbox
@@ -262,12 +268,12 @@ function! RgRange() range
     call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(selectedText), 1, 0)
 endfunction
 
-nnoremap <tab>b :Buffers<cr>
-nnoremap <tab>f :Files<cr>
-nnoremap <tab>/ :Rg<cr>
-nnoremap <tab>* :Rg <C-R>=expand("<cword>")<CR><CR>
-vnoremap <tab>/ :call RgRange()<cr>
-nnoremap <tab>t :Lines<cr>
+nnoremap fzb :Buffers<cr>
+nnoremap fzf :Files<cr>
+nnoremap fz/ :Rg<cr>
+nnoremap fz* :Rg <C-R>=expand("<cword>")<CR><CR>
+vnoremap fz/ :call RgRange()<cr>
+nnoremap fzt :Lines<cr>
 
 " complete
 set completeopt=menu
