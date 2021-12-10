@@ -234,6 +234,8 @@ Plug 'fatih/vim-go'
 Plug 'editorconfig/editorconfig-vim'
 " copilot
 "Plug 'github/copilot.vim'
+" swap
+Plug 'machakann/vim-swap'
 call plug#end()
 
 " gruvbox
