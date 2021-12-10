@@ -8,17 +8,5 @@ nnoremap <leader>% :TREPLSendFile<cr>
 
 let g:neoterm_repl_python = "pipenv run ipython --no-autoindent"
 
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_variable_declarations = 1
-
 let g:neomake_go_enabled_makers = ['go']
 call neomake#configure#automake('rw', 500)
