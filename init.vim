@@ -50,8 +50,8 @@ set t_AF=^[[38;5;%dm
 " Shell
 set shell=bash
 "" Python
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+"let g:python_host_prog = '/usr/bin/python2'
+"let g:python3_host_prog = '/usr/bin/python3'
 
 " QOL/binds
 map Y y$
@@ -86,7 +86,7 @@ function! QuickFix_toggle()
     copen
 endfunction
 
-nnoremap <silent> coq :call QuickFix_toggle()<cr>
+nnoremap <silent> yoq :call QuickFix_toggle()<cr>
 
 " persistent sessions
 function! MakeSession()
@@ -225,6 +225,7 @@ Plug 'tpope/vim-commentary'
 "Plug 'davidhalter/jedi-vim'
 "" indent
 "Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'psf/black', {'branch': 'stable'}
 " terminal text pipe
 Plug 'kassio/neoterm'
 " GO
@@ -235,9 +236,6 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'github/copilot.vim'
 call plug#end()
 
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-
 " gruvbox
 set background=dark
 "let g:gruvbox_improved_strings=1
@@ -245,47 +243,6 @@ let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
-" buffkill
-let g:BufKillCreateMappings = 0
-
-" fzf
-function! RgRange() range
-    " Get the line and column of the visual selection marks
-    let [lnum1, col1] = getpos("'<")[1:2]
-    let [lnum2, col2] = getpos("'>")[1:2]
-
-    " Get all the lines represented by this range
-    let lines = getline(lnum1, lnum2)
-
-    " The last line might need to be cut if the visual selection didn't end on the last column
-    let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
-    " The first line might need to be trimmed if the visual selection didn't start on the first column
-    let lines[0] = lines[0][col1 - 1:]
-
-    " Get the desired text
-    let selectedText = join(lines, "\n")
-
-    call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(selectedText), 1, 0)
-endfunction
-
-nnoremap fzb :Buffers<cr>
-nnoremap fzf :Files<cr>
-nnoremap fz/ :Rg<cr>
-nnoremap fz* :Rg <C-R>=expand("<cword>")<CR><CR>
-vnoremap fz/ :call RgRange()<cr>
-nnoremap fzt :Lines<cr>
-
 " complete
 set completeopt=menu
 "let g:float_preview#docked = 1
-
-" neoterm
-let g:neoterm_default_mod='vertical bo' " open terminal in bottom split
-let g:neoterm_size=16 " terminal split size
-let g:neoterm_autoscroll=1 " scroll to the bottom when running a command
-let g:neoterm_automap_keys=""
-nnoremap <leader>m :TREPLSendLine<cr><cr>" send current line and move down
-vnoremap <leader>m :TREPLSendSelection<cr> " send current selection
-nnoremap <leader>% :TREPLSendFile<cr>
-
-let g:neoterm_repl_python = "pipenv run ipython --no-autoindent"

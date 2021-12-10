@@ -38,3 +38,5 @@ function! CloseVimGoTerm() abort
 endfunction
 
 nnoremap <buffer> <leader>c :call CloseVimGoTerm()<Return>
+
+
