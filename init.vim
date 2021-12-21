@@ -236,6 +236,8 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'github/copilot.vim'
 " swap
 Plug 'machakann/vim-swap'
+" juypter notebook
+Plug 'untitled-ai/jupyter_ascending.vim'
 call plug#end()
 
 " gruvbox
@@ -247,4 +249,5 @@ colorscheme gruvbox
 
 " complete
 set completeopt=menu
+set omnifunc=syntaxcomplete#Complete
 "let g:float_preview#docked = 1

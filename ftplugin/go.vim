@@ -39,4 +39,8 @@ endfunction
 
 nnoremap <buffer> <leader>c :call CloseVimGoTerm()<Return>
 
-
+nnoremap <buffer> <leader>ds :GoDebugStart<cr>
+nnoremap <buffer> <leader>dt :GoDebugTestFunc<cr>
+nnoremap <buffer> <leader>db :GoDebugBreakpoint<cr>
+nnoremap <buffer> <leader>dc :GoDebugContinue<cr>
+nnoremap <buffer> <leader>de :GoDebugStop<cr>
