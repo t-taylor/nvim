@@ -50,8 +50,8 @@ set t_AF=^[[38;5;%dm
 " Shell
 set shell=bash
 "" Python
-"let g:python_host_prog = '/usr/bin/python2'
-"let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = 'python2'
+let g:python3_host_prog = 'python3'
 
 " QOL/binds
 map Y y$
@@ -222,7 +222,7 @@ Plug 'arecarn/vim-crunch'
 " Comment
 Plug 'tpope/vim-commentary'
 " Complete
-"Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 "" indent
 "Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'psf/black', {'branch': 'stable'}
@@ -238,6 +238,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-swap'
 " juypter notebook
 Plug 'untitled-ai/jupyter_ascending.vim'
+" Bookmarks + annotations
+Plug 'MattesGroeger/vim-bookmarks'
 call plug#end()
 
 " gruvbox
