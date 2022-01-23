@@ -13,6 +13,7 @@ set ruler
 set backspace=2
 set encoding=utf-8
 set spell
+set spelllang=en,cjk
 set clipboard+=unnamedplus
 set inccommand=split
 set winwidth=80
