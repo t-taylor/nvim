@@ -12,7 +12,7 @@ set modeline
 set ruler
 set backspace=2
 set encoding=utf-8
-set spell
+set nospell
 set spelllang=en,cjk
 set clipboard+=unnamedplus
 set inccommand=split
@@ -62,7 +62,6 @@ nnoremap ; :
 vnoremap : ;
 vnoremap ; :
 nnoremap ZQ :qa<cr>
-nmap zp z=
 inoremap <C-e> <C-o>e<right>
 inoremap <C-a> <C-o>b
 inoremap jk <Esc>
@@ -241,6 +240,9 @@ Plug 'untitled-ai/jupyter_ascending.vim'
 Plug 'tpope/vim-dadbod'
 " indent markers
 Plug 'Yggdroot/indentLine'
+" Spell check
+Plug 'kamykn/spelunker.vim'
+Plug 'kamykn/popup-menu.nvim'
 call plug#end()
 
 " Important!!
