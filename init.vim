@@ -17,6 +17,7 @@ set spelllang=en,cjk
 set clipboard+=unnamedplus
 set inccommand=split
 set winwidth=80
+set list
 
 set undofile
 set undodir=~/.local/share/nvim/undo
@@ -181,7 +182,8 @@ au BufRead /tmp/mutt-* set tw=72
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 "" Color scheme
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 "" ansi color esc
 Plug 'chrisbra/Colorizer'
 "" Brackets
@@ -214,10 +216,6 @@ Plug 'neomake/neomake'
 Plug 'chrisbra/unicode.vim'
 " Makestuff
 Plug 'tpope/vim-dispatch'
-" Complete
-"Plug 'ncm2/float-preview.nvim'
-"" quickfix gutter
-"Plug 'tomtom/quickfixsigns_vim'
 " Math
 Plug 'arecarn/vim-crunch'
 " Comment
@@ -239,18 +237,23 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-swap'
 " juypter notebook
 Plug 'untitled-ai/jupyter_ascending.vim'
-" Bookmarks + annotations
-Plug 'MattesGroeger/vim-bookmarks'
+" mysql
+Plug 'tpope/vim-dadbod'
+" indent markers
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
-" gruvbox
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
+" For dark version.
 set background=dark
-"let g:gruvbox_improved_strings=1
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " complete
 set completeopt=menu
 set omnifunc=syntaxcomplete#Complete
 "let g:float_preview#docked = 1
+"
+let g:indentLine_char = '>'
