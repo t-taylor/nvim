@@ -8,3 +8,6 @@ function! SpellToggle()
         call spelunker#check()
     endif
 endfunction
+
+
+nmap zp Zl
