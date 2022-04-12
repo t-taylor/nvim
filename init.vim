@@ -231,7 +231,7 @@ Plug 'fatih/vim-go'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 " copilot
-"Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 " swap
 Plug 'machakann/vim-swap'
 " juypter notebook
