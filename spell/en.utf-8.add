@@ -23,3 +23,7 @@ unmarshalling
 unmarshallSpottingResults
 unmarshall
 lifecycle
+apiEndpoint/!
+Timeframe
+metricsDeduplication
+Deduplication
