@@ -5,13 +5,6 @@ return require('packer').startup(function(use)
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}
 
-  -- Plugins can have dependencies on other plugins
-  use {
-    'haorenW1025/completion-nvim',
-    opt = true,
-    requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
-  }
-
   use 'sainnhe/gruvbox-material'
 
   -- ansi color esc
@@ -57,7 +50,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
 
   -- GO
-  use 'fatih/vim-go'
+  --use 'fatih/vim-go'
 
   -- swap
   use 'machakann/vim-swap'
@@ -69,4 +62,8 @@ return require('packer').startup(function(use)
   use 'kamykn/spelunker.vim'
   use 'kamykn/popup-menu.nvim'
 
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason-lspconfig.nvim'
+  use "williamboman/mason.nvim"
 end)

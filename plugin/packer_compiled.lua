@@ -79,13 +79,6 @@ _G.packer_plugins = {
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/Colorizer",
     url = "https://github.com/chrisbra/Colorizer"
   },
-  ["completion-nvim"] = {
-    after = { "vim-vsnip", "vim-vsnip-integ" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/opt/completion-nvim",
-    url = "https://github.com/haorenW1025/completion-nvim"
-  },
   fzf = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/fzf",
@@ -106,6 +99,16 @@ _G.packer_plugins = {
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/Yggdroot/indentLine"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/tom/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/tom/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   neomake = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/neomake",
@@ -115,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/neovim-remote",
     url = "https://github.com/mhinz/neovim-remote"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/tom/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -171,14 +179,10 @@ _G.packer_plugins = {
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/start/vim-go",
-    url = "https://github.com/fatih/vim-go"
-  },
   ["vim-matchup"] = {
+    after_files = { "/home/tom/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
     loaded = false,
-    needs_bufread = false,
+    needs_bufread = true,
     only_cond = false,
     path = "/home/tom/.local/share/nvim/site/pack/packer/opt/vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
@@ -202,24 +206,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
     url = "https://github.com/tpope/vim-unimpaired"
-  },
-  ["vim-vsnip"] = {
-    load_after = {
-      ["completion-nvim"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/opt/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    load_after = {
-      ["completion-nvim"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ",
-    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 

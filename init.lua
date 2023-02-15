@@ -161,7 +161,9 @@ end
 vim.opt.background = "dark"
 vim.cmd.colorscheme("gruvbox-material")
 
-vim.opt.completeopt = "menu"
-vim.opt.omnifunc = "syntaxcomplete#Complete"
-
 vim.g.indentLine_char = ">"
+
+--vim.opt.completeopt = "menu"
+--vim.opt.omnifunc = "syntaxcomplete#Complete"
+
+require('autocomplete')
