@@ -82,8 +82,6 @@ map("v", ":", ";")
 map("v", ";", ":")
 map("", ";", ":")
 
-map("i", "<C-e>", "<C-o>e<right>")
-map("i", "<C-a>", "<C-o>b")
 map("i", "jk", "<Esc>")
 map("i", "jl", "<Esc>:w<cr>")
 map("t", "jk", "<C-\\><C-n>")
