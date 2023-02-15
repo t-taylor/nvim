@@ -64,7 +64,7 @@ vim.g.python3_host_prog = "python3"
 
 -- mappings
 function map(mode, shortcut, command)
-  vim.keymap.set(mode, shortcut, command, { noremap = true, silent = true })
+  vim.keymap.set(mode, shortcut, command, { noremap = true })
 end
 
 function nmap(shortcut, command)
