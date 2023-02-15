@@ -150,3 +150,18 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
     group = remember_folds,
     command = 'silent! loadview'
   })
+
+require('plugins')
+
+if(vim.fn.has('termguicolors'))
+  then
+  vim.opt.termguicolors = true
+end
+
+vim.opt.background = "dark"
+vim.cmd.colorscheme("gruvbox-material")
+
+vim.opt.completeopt = "menu"
+vim.opt.omnifunc = "syntaxcomplete#Complete"
+
+vim.g.indentLine_char = ">"
