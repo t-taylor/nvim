@@ -64,7 +64,7 @@ vim.g.python3_host_prog = "python3"
 
 -- mappings
 function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
+  vim.keymap.set(mode, shortcut, command, { noremap = true, silent = true })
 end
 
 function nmap(shortcut, command)
@@ -94,20 +94,21 @@ map("n", "<space>", "<nop>")
 vim.g.maplocalleader = " "
 
 -- function + mappings
-vim.cmd([[
-function! QuickFix_toggle()
-    for i in range(1, winnr('$'))
-        let bnum = winbufnr(i)
-        if getbufvar(bnum, '&buftype') == 'quickfix'
-            cclose
-            return
-        endif
-    endfor
-    copen
-endfunction
-]])
 
-map("n", "yoq", ":call QuickFix_toggle()<cr>")
+function qf_toggle()
+  for i = 1,vim.fn.winnr('$'),1
+  do
+    bnum = vim.fn.winbufnr(i)
+    if vim.fn.getbufvar(bnum, '&buftype') == 'quickfix'
+      then
+      vim.cmd.cclose()
+    else
+      vim.cmd.copen()
+    end
+  end
+end
+
+map("n", "yoq", qf_toggle)
 
 -- sessions
 vim.cmd([[function! MakeSession()
