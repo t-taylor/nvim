@@ -11,20 +11,3 @@ let g:neoterm_repl_python = "pipenv run ipython --no-autoindent"
 let g:neomake_go_enabled_makers = ['go', 'golangci_lint']
 let g:neomake_php_enabled_makers = ['php', 'phpmd']
 call neomake#configure#automake('rw', 500)
-
-let g:neomake_error_sign = {
-            \ 'text': '>>',
-            \ 'texthl': 'NeomakeErrorSign',
-            \ }
-let g:neomake_warning_sign = {
-            \   'text': '>>',
-            \   'texthl': 'NeomakeWarningSign',
-            \ }
-let g:neomake_message_sign = {
-            \   'text': '>>',
-            \   'texthl': 'NeomakeMessageSign',
-            \ }
-let g:neomake_info_sign = {
-            \ 'text': '>>',
-            \ 'texthl': 'NeomakeInfoSign'
-            \ }
