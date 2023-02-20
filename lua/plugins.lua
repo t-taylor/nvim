@@ -6,7 +6,7 @@ local ensure_packer = function()
 		vim.cmd([[packadd packer.nvim]])
 		return true
 	end
-    return false
+	return false
 end
 
 local packer_bootstrap = ensure_packer()
@@ -42,6 +42,11 @@ require("packer").startup(function(use)
 		tag = "0.1.1",
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	})
 
 	-- More verbs/ motions
@@ -105,32 +110,32 @@ end)
 require("mason").setup()
 require("mason-lspconfig").setup()
 
--- LSP Diagnostics Options Setup 
+-- LSP Diagnostics Options Setup
 local sign = function(opts)
-  vim.fn.sign_define(opts.name, {
-    texthl = opts.name,
-    text = opts.text,
-    numhl = ''
-  })
+	vim.fn.sign_define(opts.name, {
+		texthl = opts.name,
+		text = opts.text,
+		numhl = "",
+	})
 end
 
-sign({name = 'DiagnosticSignError', text = '✗'})
-sign({name = 'DiagnosticSignWarn', text = '‼'})
-sign({name = 'DiagnosticSignHint', text = '💡'})
-sign({name = 'DiagnosticSignInfo', text = 'ℹ'})
+sign({ name = "DiagnosticSignError", text = "✗" })
+sign({ name = "DiagnosticSignWarn", text = "‼" })
+sign({ name = "DiagnosticSignHint", text = "💡" })
+sign({ name = "DiagnosticSignInfo", text = "ℹ" })
 
 vim.diagnostic.config({
-    virtual_text = false,
-    signs = true,
-    update_in_insert = true,
-    underline = true,
-    severity_sort = false,
-    float = {
-        border = 'rounded',
-        source = 'always',
-        header = '',
-        prefix = '',
-    },
+	virtual_text = false,
+	signs = true,
+	update_in_insert = true,
+	underline = true,
+	severity_sort = false,
+	float = {
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
 })
 
 vim.cmd([[
