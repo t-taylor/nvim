@@ -18,3 +18,16 @@ require("lspconfig")["rust_analyzer"].setup({
 		["rust-analyzer"] = {},
 	},
 })
+
+local bufopts = { noremap = true, silent = true, buffer = bufnr }
+vim.keymap.set("n", "<leader>r", function()
+	vim.cmd.Dispatch("cargo run")
+end, bufopts)
+vim.keymap.set("n", "<leader>T", function()
+	vim.cmd.Dispatch("cargo test --workspace")
+end, bufopts)
+vim.keymap.set("n", "<leader>b", function()
+	vim.cmd.Dispatch("cargo build --workspace")
+end, bufopts)
+
+vim.g.rustfmt_autosave = 1
