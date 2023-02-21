@@ -101,6 +101,14 @@ require("packer").startup(function(use)
 	-- rust
 	use("simrat39/rust-tools.nvim")
 
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			ts_update()
+		end,
+	})
+
 	-- Ensure packer is installed
 	if packer_bootstrap then
 		require("packer").sync()
