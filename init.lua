@@ -55,7 +55,7 @@ set t_AB=^[[48;5;%dm
 set t_AF=^[[38;5;%dm
 ]])
 
-vim.opt.shell = bash
+vim.opt.shell = "bash"
 
 vim.opt.ttimeoutlen = 150
 
