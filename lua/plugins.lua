@@ -78,9 +78,6 @@ require("packer").startup(function(use)
 	-- Comment
 	use("tpope/vim-commentary")
 
-	-- GO
-	use("fatih/vim-go")
-
 	-- swap
 	use("machakann/vim-swap")
 

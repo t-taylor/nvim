@@ -8,6 +8,6 @@ nnoremap <leader>% :TREPLSendFile<cr>
 
 let g:neoterm_repl_python = "pipenv run ipython --no-autoindent"
 
-let g:neomake_go_enabled_makers = ['go', 'golangci_lint']
+let g:neomake_go_enabled_makers = []
 let g:neomake_php_enabled_makers = ['php', 'phpmd']
 call neomake#configure#automake('rw', 500)

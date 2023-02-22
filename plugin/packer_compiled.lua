@@ -201,11 +201,6 @@ _G.packer_plugins = {
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/start/vim-go",
-    url = "https://github.com/fatih/vim-go"
-  },
   ["vim-matchup"] = {
     after_files = { "/home/tom/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
     loaded = false,
