@@ -18,6 +18,7 @@ require("nvim-treesitter.configs").setup({
 		"regex",
 		"rust",
 		"sql",
+		"terraform",
 		"toml",
 		"typescript",
 		"vim",

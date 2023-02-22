@@ -3,6 +3,7 @@ vim.cmd([[
     syntax on
     filetype indent plugin on
 ]])
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.tabstop = 4
@@ -63,16 +64,8 @@ vim.g.python_host_prog = "python2"
 vim.g.python3_host_prog = "python3"
 
 -- mappings
-function map(mode, shortcut, command)
+local function map(mode, shortcut, command)
 	vim.keymap.set(mode, shortcut, command, { noremap = true })
-end
-
-function nmap(shortcut, command)
-	map("n", shortcut, command)
-end
-
-function imap(shortcut, command)
-	map("i", shortcut, command)
 end
 
 map("", "Y", "y$")
@@ -93,7 +86,7 @@ vim.g.maplocalleader = " "
 
 -- function + mappings
 
-function qf_toggle()
+function Qf_toggle()
 	for i = 1, vim.fn.winnr("$"), 1 do
 		bnum = vim.fn.winbufnr(i)
 		if vim.fn.getbufvar(bnum, "&buftype") == "quickfix" then
@@ -104,7 +97,7 @@ function qf_toggle()
 	end
 end
 
-map("n", "yoq", qf_toggle)
+map("n", "yoq", Qf_toggle)
 
 -- sessions
 vim.cmd([[function! MakeSession()
