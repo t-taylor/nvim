@@ -123,9 +123,9 @@ function! LoadSession()
 endfunction
 ]])
 
-map("n", "<leader>ss ;call", "LoadSession()<cr>")
-map("n", "<leader>sS ;call", "MakeSession()<cr>")
-map("n", "<C-L> :nohl<CR><C-L>:syntax sync", "minlines=10000<cr>")
+map("n", "<leader>ss", vim.fn.LoadSession)
+map("n", "<leader>sS", vim.fn.MakeSession)
+map("n", "<C-L>", ":nohl<CR><C-L>:syntax sync minlines=10000<cr>")
 
 local remember_folds = vim.api.nvim_create_augroup("remember_folds", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
