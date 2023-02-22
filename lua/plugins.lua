@@ -108,6 +108,11 @@ require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+    use({
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
+    })
 
 	-- Ensure packer is installed
 	if packer_bootstrap then
