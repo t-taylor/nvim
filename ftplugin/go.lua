@@ -33,6 +33,6 @@ end, bufopts)
 vim.cmd([[
 augroup go_fmt
   autocmd!
-  autocmd BufWritePost *.go silent Start! go fmt %
+  autocmd BufWritePost *.go silent Dispatch! go fmt %
 augroup end
 ]])
