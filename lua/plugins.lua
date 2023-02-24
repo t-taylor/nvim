@@ -84,9 +84,14 @@ require("packer").startup(function(use)
 	-- indent markers
 	use("Yggdroot/indentLine")
 
+	-- project folderuse {
+	use("ahmedkhalf/project.nvim")
+
 	-- Spell check
 	use("kamykn/spelunker.vim")
 	use("kamykn/popup-menu.nvim")
+
+	use({ "shortcuts/no-neck-pain.nvim", tag = "*" })
 
 	-- LSP
 	use({
@@ -105,11 +110,11 @@ require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
-    use({
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        after = "nvim-treesitter",
-        requires = "nvim-treesitter/nvim-treesitter",
-    })
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
 
 	-- Ensure packer is installed
 	if packer_bootstrap then

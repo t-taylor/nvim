@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/neovim-remote",
     url = "https://github.com/mhinz/neovim-remote"
   },
+  ["no-neck-pain.nvim"] = {
+    loaded = true,
+    path = "/home/tom/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
+    url = "https://github.com/shortcuts/no-neck-pain.nvim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -140,6 +145,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/popup-menu.nvim",
     url = "https://github.com/kamykn/popup-menu.nvim"
+  },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/home/tom/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
