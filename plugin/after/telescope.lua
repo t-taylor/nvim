@@ -18,7 +18,7 @@ vim.keymap.set("n", "fzb", builtin.buffers, {})
 vim.keymap.set("n", "fzh", builtin.help_tags, {})
 vim.keymap.set("n", "fz;", builtin.commands, {})
 
-function fuzzyFindFiles()
+function FuzzyFindFiles()
 	builtin.grep_string({
 		path_display = { "smart" },
 		only_sort_text = true,
@@ -27,4 +27,8 @@ function fuzzyFindFiles()
 	})
 end
 
-vim.keymap.set("n", "fz/", fuzzyFindFiles, {})
+vim.keymap.set("n", "fz/", FuzzyFindFiles, {})
+
+require("telescope").load_extension("projects")
+
+vim.keymap.set("n", "fzp", require("telescope").extensions.projects.projects, {})
