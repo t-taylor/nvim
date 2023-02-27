@@ -141,11 +141,6 @@ _G.packer_plugins = {
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["popup-menu.nvim"] = {
-    loaded = true,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/start/popup-menu.nvim",
-    url = "https://github.com/kamykn/popup-menu.nvim"
-  },
   ["project.nvim"] = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/project.nvim",
@@ -155,11 +150,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
-  },
-  ["spelunker.vim"] = {
-    loaded = true,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/start/spelunker.vim",
-    url = "https://github.com/kamykn/spelunker.vim"
   },
   ["targets.vim"] = {
     loaded = true,

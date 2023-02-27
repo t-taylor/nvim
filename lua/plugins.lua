@@ -87,10 +87,6 @@ require("packer").startup(function(use)
 	-- project folderuse {
 	use("ahmedkhalf/project.nvim")
 
-	-- Spell check
-	use("kamykn/spelunker.vim")
-	use("kamykn/popup-menu.nvim")
-
 	use({ "shortcuts/no-neck-pain.nvim", tag = "*" })
 
 	-- LSP
