@@ -95,6 +95,8 @@ require("packer").startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	})
+	-- null-lsp
+	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- rust
 	use("simrat39/rust-tools.nvim")

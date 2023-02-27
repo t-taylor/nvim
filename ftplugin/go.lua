@@ -29,10 +29,3 @@ end, bufopts)
 vim.keymap.set("n", "<leader>V", function()
 	vim.cmd.Dispatch("go vet ./...")
 end, bufopts)
-
-vim.cmd([[
-augroup go_fmt
-  autocmd!
-  autocmd BufWritePost *.go silent Dispatch! go fmt %
-augroup end
-]])
