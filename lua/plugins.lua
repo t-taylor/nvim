@@ -62,12 +62,6 @@ require("packer").startup(function(use)
 	-- rename
 	use("tpope/vim-eunuch")
 
-	-- Async
-	use("mhinz/neovim-remote")
-
-	-- Async make
-	use("neomake/neomake")
-
 	-- Unicode
 	use("chrisbra/unicode.vim")
 

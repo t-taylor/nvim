@@ -99,16 +99,6 @@ _G.packer_plugins = {
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  neomake = {
-    loaded = true,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/start/neomake",
-    url = "https://github.com/neomake/neomake"
-  },
-  ["neovim-remote"] = {
-    loaded = true,
-    path = "/home/tom/.local/share/nvim/site/pack/packer/start/neovim-remote",
-    url = "https://github.com/mhinz/neovim-remote"
-  },
   ["no-neck-pain.nvim"] = {
     loaded = true,
     path = "/home/tom/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
