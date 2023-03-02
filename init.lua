@@ -100,7 +100,7 @@ function Qf_toggle()
 	end
 end
 
-map("n", "yoq", Qf_toggle)
+map("n", "<localleader>q", Qf_toggle)
 
 -- sessions
 vim.cmd([[function! MakeSession()

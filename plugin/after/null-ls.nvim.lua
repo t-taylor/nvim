@@ -11,9 +11,12 @@ null_ls.setup({
 		null_ls.builtins.formatting.gofumpt,
 		--null_ls.builtins.diagnostics.revive,
 		-- php
-		null_ls.builtins.diagnostics.phpcs,
+		--null_ls.builtins.diagnostics.phpcs,
 		null_ls.builtins.diagnostics.phpmd,
-		null_ls.builtins.diagnostics.phpstan,
+		--null_ls.builtins.diagnostics.phpstan,
+		-- terraform
+		null_ls.builtins.diagnostics.terraform_validate,
+		null_ls.builtins.formatting.terraform_fmt,
 		-- misc
 		null_ls.builtins.diagnostics.semgrep,
 		null_ls.builtins.diagnostics.codespell,

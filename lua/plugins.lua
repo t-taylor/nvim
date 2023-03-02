@@ -108,6 +108,8 @@ require("packer").startup(function(use)
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 
+	use("folke/trouble.nvim")
+
 	-- Ensure packer is installed
 	if packer_bootstrap then
 		require("packer").sync()
