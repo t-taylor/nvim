@@ -25,12 +25,10 @@ require("nvim-treesitter.configs").setup({
 		"vue",
 		"yaml",
 	},
-
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
-
 	-- incremental_selection = {
 	-- 	enable = true,
 	-- 	keymaps = {
@@ -44,12 +42,10 @@ require("nvim-treesitter.configs").setup({
 	indent = {
 		enable = true,
 	},
-
 	refactor = {
 		highlight_definitions = { enable = true },
 		highlight_current_scope = { enable = true },
 	},
-
 	textobjects = {
 		select = {
 			enable = true,
@@ -83,3 +79,10 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
+-- code folding settings
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevelstart = 99
+vim.opt.foldnestmax = 10 -- deepest fold is 10 levels
+vim.opt.foldenable = false -- don't fold by default
+vim.opt.foldlevel = 1
