@@ -31,6 +31,9 @@ null_ls.setup({
 
 		-- javascript/typescript
 		null_ls.builtins.diagnostics.eslint,
+
+		-- json
+		null_ls.builtins.formatting.jq,
 	},
 })
 
