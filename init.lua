@@ -46,6 +46,8 @@ vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 200
 vim.opt.signcolumn = "yes"
 
+vim.opt.conceallevel = 0
+
 vim.opt.joinspaces = false
 
 vim.opt.updatetime = 300
@@ -68,7 +70,7 @@ vim.g.python3_host_prog = "python3"
 
 -- mappings
 local function map(mode, shortcut, command)
-	vim.keymap.set(mode, shortcut, command, { noremap = true })
+    vim.keymap.set(mode, shortcut, command, { noremap = true })
 end
 
 map("", "Y", "y$")
@@ -90,14 +92,14 @@ vim.g.maplocalleader = " "
 -- function + mappings
 
 function Qf_toggle()
-	for i = 1, vim.fn.winnr("$"), 1 do
-		bnum = vim.fn.winbufnr(i)
-		if vim.fn.getbufvar(bnum, "&buftype") == "quickfix" then
-			vim.cmd.cclose()
-		else
-			vim.cmd.copen()
-		end
-	end
+    for i = 1, vim.fn.winnr("$"), 1 do
+        bnum = vim.fn.winbufnr(i)
+        if vim.fn.getbufvar(bnum, "&buftype") == "quickfix" then
+            vim.cmd.cclose()
+        else
+            vim.cmd.copen()
+        end
+    end
 end
 
 map("n", "<localleader>q", Qf_toggle)
@@ -132,20 +134,20 @@ map("n", "<C-L>", ":nohl<CR><C-L>:syntax sync minlines=10000<cr>")
 
 local remember_folds = vim.api.nvim_create_augroup("remember_folds", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
-	pattern = "*",
-	group = remember_folds,
-	command = "silent! mkview",
+    pattern = "*",
+    group = remember_folds,
+    command = "silent! mkview",
 })
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-	pattern = "*",
-	group = remember_folds,
-	command = "silent! loadview",
+    pattern = "*",
+    group = remember_folds,
+    command = "silent! loadview",
 })
 
 require("plugins")
 
 if vim.fn.has("termguicolors") then
-	vim.opt.termguicolors = true
+    vim.opt.termguicolors = true
 end
 
 vim.opt.background = "dark"
