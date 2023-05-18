@@ -1,12 +1,12 @@
 local telescope = require("telescope").setup({
-	extensions = {
-		fzf = {
-			fuzzy = true,
-			override_generic_sorter = true,
-			override_file_sorter = true,
-			case_mode = "smart_case",
-		},
-	},
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        },
+    },
 })
 require("telescope").load_extension("fzf")
 
@@ -19,12 +19,12 @@ vim.keymap.set("n", "fzh", builtin.help_tags, {})
 vim.keymap.set("n", "fz;", builtin.commands, {})
 
 function FuzzyFindFiles()
-	builtin.grep_string({
-		path_display = { "smart" },
-		only_sort_text = true,
-		word_match = "-w",
-		search = "",
-	})
+    builtin.grep_string({
+        path_display = { "smart" },
+        only_sort_text = true,
+        word_match = "-w",
+        search = "",
+    })
 end
 
 vim.keymap.set("n", "fz/", FuzzyFindFiles, {})
@@ -32,3 +32,12 @@ vim.keymap.set("n", "fz/", FuzzyFindFiles, {})
 require("telescope").load_extension("projects")
 
 vim.keymap.set("n", "fzp", require("telescope").extensions.projects.projects, {})
+
+function FuzzyLines()
+    builtin.live_grep({
+        prompt_title = "find string in open buffers...",
+        grep_open_files = true,
+    })
+end
+
+vim.keymap.set("n", "fzl", FuzzyLines, {})
